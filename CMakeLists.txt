@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 project(idf_as_lib C)
 
+add_compile_definitions(ESP_PLATFORM=1)
+
 set(targets "esp32" "esp32s2" "esp32s3" "esp32c3" "esp32c2" "esp32c6" "esp32h2")
 
 if("${TARGET}" IN_LIST targets)
