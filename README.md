@@ -1,4 +1,5 @@
 * Get the repository to ESP-IDF v5.1.4 (The highest version that works without problem)
+* However, there is a problem in v5.2. 
 ```
 mkdir -p ~/esp
 cd ~/esp
