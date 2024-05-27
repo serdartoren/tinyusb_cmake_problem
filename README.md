@@ -1,3 +1,14 @@
+* Get the repository to ESP-IDF v5.1.4
+```
+mkdir -p ~/esp
+cd ~/esp
+git clone https://github.com/espressif/esp-idf.git
+cd esp-idf
+git pull
+git checkout d7b0a45ddbddbac53afb4fc28168f9f9259dbb79
+git submodule update --init --recursive
+```
+
 | Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-S2 | ESP32-S3 |
 | ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- |
 
