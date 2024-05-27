@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DSDKCONFIG=/home/ben/tiny_usb_cmake/sdkconfig;-DIDF_PATH=/home/ben/esp/esp-idf;-DIDF_TARGET=esp32s3;-DPYTHON_DEPS_CHECKED=1;-DPYTHON=python;-DEXTRA_COMPONENT_DIRS=/home/ben/esp/esp-idf/components/bootloader;-DPROJECT_SOURCE_DIR=/home/ben/tiny_usb_cmake;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'
