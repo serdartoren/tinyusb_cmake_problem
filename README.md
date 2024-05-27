@@ -1,3 +1,14 @@
+* Get the repository to ESP-IDF v5.1.4 (The highest version that works without problem)
+```
+mkdir -p ~/esp
+cd ~/esp
+git clone https://github.com/espressif/esp-idf.git
+cd esp-idf
+git pull
+git checkout d7b0a45ddbddbac53afb4fc28168f9f9259dbb79
+git submodule update --init --recursive
+```
+
 | Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-S2 | ESP32-S3 |
 | ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- |
 
@@ -11,37 +22,14 @@ is meant to be run on the host to simulate the same application behavior.
 
 The application in this example is equivalent to the `hello_world` example under `examples/get-started/hello_world`.
 
-## Example Flow
-
-Users looking at this example should focus on the [top-level CMakeLists.txt file](./CMakeLists.txt). This builds an
-application that can run on the target without relying on the typical ESP-IDF application template.
-
-### Output
-
-```
-Hello world!
-This is ESP32 chip with 2 CPU cores, WiFi/BT/BLE, silicon revision 0, 4MB external flash
-Restarting in 10 seconds...
-Restarting in 9 seconds...
-Restarting in 8 seconds...
-Restarting in 7 seconds...
-Restarting in 6 seconds...
-Restarting in 5 seconds...
-Restarting in 4 seconds...
-Restarting in 3 seconds...
-Restarting in 2 seconds...
-Restarting in 1 seconds...
-Restarting in 0 seconds...
-```
-
 ## Building this Example
 
 To build this example, the user can either run [build-esp32.sh](./build-esp32.sh) to build for the ESP32
 or run [build.sh](./build.sh) to build for the host:
 
 ```bash
-# Builds the example for ESP32
-./build-esp32.sh
+# Builds the example for ESP32s3
+./build-esp32s3.sh
 ```
 
 Note: To build for a different target SoC, copy the `build-esp32.sh` file and change the `-DTARGET=esp32` clause on the second line.
@@ -70,22 +58,9 @@ or
 ./run.sh
 ```
 
-## Configuring this Example
-
-To modify the example ESP-IDF project configuration, first create the CMake build directory. This can be done by running `build-esp32.sh` or by running only the first two lines in `build-esp32.sh` (which won't build the actual project yet).
-
-Then execute the menuconfig build target in the build directory:
-
 ```bash
 cmake --build build -- menuconfig
 ```
-
-If using ninja directly:
-
-```bash
-ninja -C build menuconfig
-```
-
 Note: ESP-IDF project configuration isn't used by the host CMake builds, the config is only read when the project is built using the ESP-IDF build system.
 
 ---
